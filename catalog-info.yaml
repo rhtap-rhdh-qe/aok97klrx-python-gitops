@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: aok97klrx-python-gitops
+  description: This is GitOps manifest for aok97klrx-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=aok97klrx-python
+    backstage.io/kubernetes-id: aok97klrx-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: aok97klrx-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:aok97klrx-python
